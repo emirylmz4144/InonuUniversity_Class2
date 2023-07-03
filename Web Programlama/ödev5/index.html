@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trafik Lambası</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        
+        .traffic-lights {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 4px solid #555; /* Çerçeve kalınlığı */
+            padding: 10px 3px;
+            width: 150px;
+            border-radius: 20px;
+            background-color: #444; /* Trafik lambası gövdesinin rengi */
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Gölge efekti */
+            overflow: hidden; /* Animasyonlu ışık için taşan parçaları gizleyelim */
+        }
+        
+        .light-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .light {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 10px;
+            background-color: #444;
+            box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.6);
+            opacity: 0.3;
+            transition: opacity 0.3s; /* Parlaklık geçişi için animasyon */
+        }
+        
+        .light.on {
+            opacity: 1;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8); /* Parlaklık efekti */
+        }
+        
+        .red {
+            background-color: red;
+        }
+        
+        .yellow {
+            background-color: yellow;
+        }
+        
+        .green {
+            background-color: green;
+        }
+        
+        .buttons {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .button-container {
+            margin: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            border: 2px solid #000; /* Butonların çerçeve rengi siyah */
+            font-size: 16px;
+            cursor: pointer;
+            width: 80px;
+            border-radius: 10px;
+            color: #000;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Çerçeve rengi değişimi için geçiş efekti */
+        }
+
+        button:hover {
+            background-color: #444;
+            color: #f0f0f0;
+            border-color: #00f; /* Hover durumunda çerçeve rengi mavi */
+        }
+
+        button:active {
+            background-color: #000;
+            color: #f0f0f0;
+            border-color: #00f; /* Butona tıklandığında çerçeve rengi mavi */
+        }
+
+        .red-button {
+            background-color: red;
+            color: white;
+            border-color: black;
+        }
+        
+        .yellow-button {
+            background-color: yellow;
+            border-color: black;
+        }
+        
+        .green-button {
+            background-color: green;
+            color: white;
+            border-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="traffic-lights">
+        <div class="light-container">
+            <div class="light red" onclick="changeLight('red')"></div>
+            <div class="light yellow" onclick="changeLight('yellow')"></div>
+            <div class="light green" onclick="changeLight('green')"></div>
+        </div>
+    </div>
+    <div class="buttons">
+        <div class="button-container">
+            <button class="red-button" onclick="changeLight('red')">Kırmızı</button>
+        </div>
+        <div class="button-container">
+            <button class="yellow-button" onclick="changeLight('yellow')">Sarı</button>
+        </div>
+        <div class="button-container">
+            <button class="green-button" onclick="changeLight('green')">Yeşil</button>
+        </div>
+    </div>
+
+    <script>
+        function changeLight(color) {
+            const lights = document.querySelectorAll('.light');
+        
+            lights.forEach(light => {
+                light.classList.remove('on');
+            });
+        
+            const selectedLight = document.querySelector(`.${color}`);
+            selectedLight.classList.add('on');
+        }
+    </script>
+</body>
+</html>

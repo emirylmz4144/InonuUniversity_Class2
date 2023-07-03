@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Restaurant Menu</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body style="background-color: aqua;">
+  <div class="menu">
+    <div class="row">
+      <div class="menu-item" onclick="showDetails(1)">
+        <img src="baklava.jpg">
+        <h3>Product 1</h3>
+      </div>
+      <div class="menu-item" onclick="showDetails(2)">
+        <img src="browni.jpg">
+        <h3>Product 2</h3>
+      </div>
+      <div class="menu-item" onclick="showDetails(3)">
+        <img src="ıslakKeK.jpg">
+        <h3>Product 3</h3>
+      </div>
+      
+    </div>
+    <div class="row">
+      <div class="menu-item" onclick="showDetails(4)">
+        <img src="lokum.jpg">
+        <h3>Product 4</h3>
+      </div>
+      <div class="menu-item" onclick="showDetails(5)">
+        <img src="sogukBaklava.jpg">
+        <h3>Product 5</h3>
+      </div>
+      <div class="menu-item" onclick="showDetails(6)">
+        <img src="tulumba.jpg">
+        <h3>Product 6</h3>
+      </div>
+    </div>
+  </div>
+  
+  <div class="menu-content" style="text-align: center;">
+    <h2>Lezzetli Tatlar</h2>
+    <p>
+      Restoranımızda özenle hazırladığımız birbirinden lezzetli ürünleri sunuyoruz. Baklavalarımızın incecik yufkası ve ceviz dolgusuyla enfes bir lezzet sunarken, brownilerimiz çikolata tutkunlarını mest ediyor. Islak keklerimiz, nemli ve yoğun yapısıyla tatlı bir kaçamak için ideal bir seçenek. Lokumlarımız, şekerle kaplı dış kabuğu ve farklı iç lezzetleriyle tatlı bir atıştırmalık sunuyor. Serinletici bir lezzet arayanlar için soğuk baklavamızı tavsiye ediyoruz. Son olarak, çıtır çıtır tulumba tatlımız da damaklarda unutulmaz bir iz bırakıyor.
+    </p>
+    <p>
+      Tüm ürünlerimizi özenle seçilmiş malzemelerle ve geleneksel tariflerimizle hazırlıyoruz. Sizleri lezzet dolu bir deneyim için restoranımıza bekliyoruz.
+    </p>
+  </div>
+  <script>
+    function showDetails(productId) {
+      if (productId === 1) {
+        window.open('baklava.html', '_blank');
+      } else if (productId === 2) {
+        window.open('browni.html', '_blank');
+      } else if (productId === 3) {
+        window.open('ıslakKeK.html', '_blank');
+      } else if (productId === 4) {
+        window.open('lokum.html', '_blank');
+      } else if (productId === 5) {
+        window.open('sogukBaklava.html', '_blank');
+      } else if (productId === 6) {
+        window.open('tulumba.html', '_blank');
+      } else {
+        alert('Ürün bulunamadı.');
+      }
+    }
+  </script>
+</body>
+</html>
